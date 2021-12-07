@@ -1,14 +1,6 @@
 config {
   type: "table",
-  schema: "intermediate",
-  assertions: {
-    uniqueKey: ["gameId"],
-    nonNull:["year"],
-    rowConditions: [
-      "year >= 2016",
-      "dayNight = 'D'",
-    ]
-  }
+  schema: "intermediate"
 }
 
 SELECT gameId, gameNumber, year, type, duration, duration_minutes
