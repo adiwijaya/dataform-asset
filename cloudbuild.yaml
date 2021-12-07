@@ -41,6 +41,14 @@ steps:
   id: Dataform Compile
   args: ['compile']
 
+- name: gcr.io/cloud-builders/gcloud
+  id: Get SA key
+  entrypoint: "bash"
+  args:
+  - "-c"
+  - |
+    gcloud iam service-accounts keys create .df-credentials.json --iam-account=sa-dataform@pso-dataform-kit.iam.gserviceaccount.com
+
 - name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
   id: Dataform Run
   args: ['run']
