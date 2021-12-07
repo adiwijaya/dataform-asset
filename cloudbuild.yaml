@@ -1,5 +1,5 @@
 steps:
 - id: lint
-  name: gcr.io/$PROJECT_ID/make
+  name: gcr.io/$PROJECT_ID/test
   args: [test]
   waitFor: ['-']
