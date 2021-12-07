@@ -64,6 +64,27 @@ steps:
   id: Dataform Run
   args: ['run']
 
+# Get the SA key id for deletion using jq command and removing the key file
+- name: stedolan/jq
+  id: get SA key id
+  entrypoint: "bash"
+  args:
+  - "-c"
+  - |
+    jq -r '.private_key_id' sa-key.json > key-id.txt
+    rm -f sa-key.json
+
+# Delete the SA key
+- name: gcr.io/cloud-builders/gcloud
+  id: Delete SA Key
+  entrypoint: "bash"
+  args:
+  - "-c"
+  - |
+    key_id=$(cat key-id.txt)
+    gcloud iam service-accounts keys delete $key_id --iam-account=sa-dataform@pso-dataform-kit.iam.gserviceaccount.com --quiet
+    rm -f .df-credentials.json
+
 - name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
   id: Dataform test
   args: ['test']
