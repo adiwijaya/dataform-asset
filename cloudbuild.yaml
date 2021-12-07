@@ -35,10 +35,8 @@ steps:
 
 - name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
   id: Dataform Install
-  dir: dataform-project
   args: ['install']
 
 - name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
   id: Dataform Compile
-  dir: dataform-project
   args: ['compile']
