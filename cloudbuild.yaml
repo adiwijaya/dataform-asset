@@ -40,3 +40,11 @@ steps:
 - name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
   id: Dataform Compile
   args: ['compile']
+
+- name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
+  id: Dataform Run
+  args: ['run']
+
+- name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
+  id: Dataform Run
+  args: ['test']

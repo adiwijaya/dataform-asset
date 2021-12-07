@@ -1,14 +1,16 @@
 config {
   type: "table",
-  schema: "intermediate"
+  schema: "intermediate",
+  assertions: {
+    uniqueKey: ["gameId"],
+    nonNull:["year"],
+    rowConditions: [
+      "year >= 2016",
+      "dayNight = 'D'",
+    ]
+  }
 }
-
 
 SELECT gameId, gameNumber, year, type, duration, duration_minutes
 FROM ${ref("baseball_schedules")}
 WHERE dayNight = 'D' and year >= 2016
-
--- select *
--- from 
---   ${ref("table_name")} / schema.table_name
--- read more about ref() in the documentation tab -->
