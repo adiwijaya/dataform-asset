@@ -1,0 +1,9 @@
+config {
+  type: "view",
+  schema: "datamart"
+}
+
+SELECT 
+  SUM(gameNumber) as sum_game_number, 
+  SUM(duration_minutes) as sum_duration_minutes
+FROM ${ref("baseball_aggr")}
