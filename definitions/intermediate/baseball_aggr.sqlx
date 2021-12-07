@@ -1,0 +1,13 @@
+config {
+  type: "table"
+}
+
+
+SELECT gameId, gameNumber, year, type, duration, duration_minutes
+FROM ${ref("baseball_schedules")}
+WHERE dayNight = 'D' and year >= 2016
+
+-- select *
+-- from 
+--   ${ref("table_name")} / schema.table_name
+-- read more about ref() in the documentation tab -->
