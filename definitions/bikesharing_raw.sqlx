@@ -2,4 +2,4 @@ config {
   type: "table"
 }
 
-SELECT * FROM `bigquery-public-data.san_francisco.bikeshare_stations`
+SELECT * FROM `bigquery-public-data.baseball.schedules`
