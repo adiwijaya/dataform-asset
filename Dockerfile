@@ -21,11 +21,11 @@ FROM dataformco/dataform
 # RUN npm install @dataform/cli
 
 # Set working directory
-ENV DATAFORM_DIR /dataform-project/
+ENV DATAFORM_DIR .
 WORKDIR $DATAFORM_DIR
 
 # Copy files to the image
-COPY dataform-project $DATAFORM_DIR
+COPY . $DATAFORM_DIR
 
 # Run dbt
 ENTRYPOINT ["dataform"]
