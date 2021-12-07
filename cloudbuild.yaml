@@ -54,11 +54,10 @@ steps:
 
 - name: python
   id: Generate dataform credential
-  entrypoint: "python"
   args:
   - "-c"
   - |
-    dataform-credential-builder.py $PROJECT_ID sa-key.json US
+    python3 dataform-credential-builder.py $PROJECT_ID sa-key.json US
 
 - name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
   id: Dataform Run
