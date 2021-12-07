@@ -52,13 +52,13 @@ steps:
   - |
     gcloud iam service-accounts keys create sa-key.json --iam-account=sa-dataform@pso-dataform-kit.iam.gserviceaccount.com
 
-- name: python
+- name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
   id: Generate dataform credential
-  entrypoint: "python"
+  entrypoint: "bash"
   args:
   - "-c"
   - |
-    dataform-credential-builder.py $PROJECT_ID sa-key.json US
+    python dataform-credential-builder.py $PROJECT_ID sa-key.json US
 
 - name: 'gcr.io/$PROJECT_ID/dataform-builder-basic'
   id: Dataform Run
