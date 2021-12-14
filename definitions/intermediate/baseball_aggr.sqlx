@@ -3,6 +3,15 @@ config {
   schema: "intermediate"
 }
 
-SELECT gameId, gameNumber, year, type, duration, duration_minutes
-FROM ${ref("baseball_schedules")}
-WHERE dayNight = 'D' and year >= 2016
+SELECT 
+  gameId, 
+  gameNumber, 
+  year, 
+  type, 
+  duration, 
+  duration_minutes
+FROM 
+  ${ref("stg_schedules")}
+WHERE 
+  dayNight = 'D' 
+  and year >= 2016

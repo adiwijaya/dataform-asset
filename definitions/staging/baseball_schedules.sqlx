@@ -1,6 +1,0 @@
-config {
-  type: "table",
-  schema: "raw"
-}
-
-SELECT * FROM `bigquery-public-data.baseball.schedules`
