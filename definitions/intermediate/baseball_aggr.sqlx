@@ -7,8 +7,7 @@ SELECT
   gameId, 
   gameNumber, 
   year, 
-  type, 
-  duration, 
+  dayNight,
   duration_minutes
 FROM 
   ${ref("stg_schedules")}

@@ -6,5 +6,5 @@ config {
 SELECT 
   SUM(gameNumber) as sum_game_number, 
   SUM(duration_minutes) as sum_duration_minutes
-FROM ${ref("baseball_aggr")}
-WHERE 1=1
+FROM 
+  ${ref("baseball_aggr")}

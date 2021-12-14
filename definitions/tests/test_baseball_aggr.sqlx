@@ -1,0 +1,27 @@
+config {
+  type: "test",
+  dataset: "baseball_aggr"
+}
+
+input "stg_schedules" {
+  SELECT 
+  1 AS gameId, 
+  1 AS gameNumber, 
+  2016 AS year, 
+  'D' AS dayNight,
+  60 AS duration_minutes
+  UNION ALL
+  SELECT 
+  1 AS gameId, 
+  1 AS gameNumber, 
+  2015 AS year, 
+  'N' AS dayNight,
+  60 AS duration_minutes
+}
+
+SELECT 
+1 AS gameId, 
+1 AS gameNumber, 
+2016 AS year, 
+'D' AS dayNight,
+60 AS duration_minutes
