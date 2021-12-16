@@ -1,6 +1,17 @@
 config {
   type: "table",
-  schema: "intermediate"
+  schema: "intermediate",
+  assertions: {
+    uniqueKey: ["gameId"]
+  },
+  description: "This table defines something",
+  columns: {
+    gameId: "A test column",
+    gameId: "A test column",
+    year: "A test column",
+    dayNight: "A test column",
+    duration_minutes: "A test column",
+  }
 }
 
 SELECT 
