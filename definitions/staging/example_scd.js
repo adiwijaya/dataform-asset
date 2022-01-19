@@ -13,7 +13,7 @@ scd("source_data_scd", {
   // Any configuration parameters to apply to the incremental table that will be created.
   incrementalConfig: {
     bigquery: {
-      partitionBy: "startTime",
+      partitionBy: "DATE(startTime)",
     },
   },
 });
