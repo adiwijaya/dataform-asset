@@ -25,8 +25,3 @@ FROM
 WHERE 
   dayNight = 'D' 
   and year >= 2016
-
-
-  with customers as{
-    SELECT * FROM ${ref("stg_customers")}
-  },
