@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "pso-dataform-kit",
+  schema: "static_source",
+  name: "posts",
+  description: "raw post table"
+}
