@@ -7,7 +7,7 @@ config {
   description: "This table defines something",
   columns: {
     gameId: "A test column",
-    gameId: "A test column",
+    gameNumber: "A test column",
     year: "A test column",
     dayNight: "A test column",
     duration_minutes: "A test column",
@@ -25,3 +25,8 @@ FROM
 WHERE 
   dayNight = 'D' 
   and year >= 2016
+
+
+  with customers as{
+    SELECT * FROM ${ref("stg_customers")}
+  },
